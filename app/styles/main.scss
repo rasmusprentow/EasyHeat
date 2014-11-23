@@ -1,6 +1,38 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 // bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
+
+
+@mixin centre($axis: "both"){
+  position:absolute;
+  @if $axis == "y"{
+    top:50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  @if $axis == "x"{
+    left:50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+  @if $axis == "both"{
+    top:50%;
+    left:50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+}
 
 .browsehappy {
   margin: 0.2em 0;
@@ -63,7 +95,7 @@ body {
   margin: 40px 0;
 
   p + h4 {
-    margin-top: 28px;
+   // margin-top: 28px;
   }
 }
 
@@ -84,8 +116,36 @@ body {
   .header {
     margin-bottom: 30px;
   }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
+
+}
+
+.hour {
+  max-height: 30px;
+//  @include centre(y);
+}
+
+.hour-view-base
+{
+
+}
+
+.time-view {
+  //@include centre('y');
+  //display:block;
+ //@extend  .hour-view-base;
+}
+.slider-view
+{
+
+
+}
+.temperature-view
+{
+ // @extend  .hour-view-base;
+}
+
+
+.line {
+  stroke: black;
+  stroke-width: 2px;
 }
