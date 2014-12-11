@@ -1,0 +1,25 @@
+{"level":"info","message":"mongoose connection is open","timestamp":"2014-12-07T21:16:13.674Z"}
+{"level":"info","message":"mongoose connection is open","timestamp":"2014-12-11T22:04:32.853Z"}
+{"level":"info","message":"mongoose connection is open","timestamp":"2014-12-11T22:10:31.353Z"}
+{"level":"info","message":"mongoose connection is open","timestamp":"2014-12-11T22:10:51.220Z"}
+{"level":"info","message":"mongoose connection is open","timestamp":"2014-12-11T22:11:28.862Z"}
+{"level":"info","message":"mongoose connection is open","timestamp":"2014-12-11T22:13:13.890Z"}
+{"level":"info","message":"mongoose connection is open","timestamp":"2014-12-11T22:16:41.248Z"}
+{"level":"info","message":"mongoose connection is open","timestamp":"2014-12-11T22:36:33.031Z"}
+{"level":"info","message":"mongoose connection is open","timestamp":"2014-12-11T22:39:35.862Z"}
+{"level":"info","message":"mongoose connection is open","timestamp":"2014-12-11T22:41:19.480Z"}
+{"message":"","name":"CastError","type":"ObjectId","value":"1","path":"_id","level":"error","timestamp":"2014-12-11T22:45:00.253Z"}
+{"message":"","name":"CastError","type":"ObjectId","value":"1","path":"_id","level":"error","timestamp":"2014-12-11T22:45:04.959Z"}
+{"message":"","name":"CastError","type":"ObjectId","value":"1","path":"_id","level":"error","timestamp":"2014-12-11T22:50:43.312Z"}
+{"message":"","name":"CastError","type":"ObjectId","value":"1","path":"_id","level":"error","timestamp":"2014-12-11T22:50:49.347Z"}
+{"message":"","name":"CastError","type":"ObjectId","value":"friday","path":"_id","level":"error","timestamp":"2014-12-11T22:50:56.486Z"}
+{"level":"info","message":"mongoose connection is open","timestamp":"2014-12-11T22:51:48.037Z"}
+{"level":"info","message":"update success","timestamp":"2014-12-11T22:55:09.720Z"}
+{"level":"info","message":"update success","timestamp":"2014-12-11T22:55:18.438Z"}
+{"level":"info","message":"update success","timestamp":"2014-12-11T23:01:44.971Z"}
+{"level":"info","message":"update success","timestamp":"2014-12-11T23:01:54.678Z"}
+{"level":"info","message":"update success","timestamp":"2014-12-11T23:02:14.394Z"}
+{"level":"info","message":"update success","timestamp":"2014-12-11T23:03:06.482Z"}
+{"level":"info","message":"update success","timestamp":"2014-12-11T23:04:21.640Z"}
+{"level":"info","message":"update success","timestamp":"2014-12-11T23:04:54.534Z"}
+{"level":"info","message":"update success","timestamp":"2014-12-11T23:09:31.079Z"}
