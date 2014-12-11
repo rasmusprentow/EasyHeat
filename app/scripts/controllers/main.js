@@ -11,19 +11,23 @@ angular.module('easyHeatApp')
   .controller('MainCtrl', function ($scope) {
     $scope.bounds = [15, 27];
     var day = [];
-    for(var i = 0; i < 24; i++)
-    {
-      day[i] = {index: i, temperature: 20}
-    }
+    //$http.get('http:/localhost:3000/temperatures')
     $scope.days = [
-      {name : 'monday', hours : day},
-      {name : 'tuesday', hours : day},
-      {name : 'wedensday',hours : day},
-      {name : 'thursday',hours : day},
-      {name : 'friday',hours : day},
+      {name : 'weekday', hours : day},
+      {name : 'friday', hours : day},
       {name : 'saturday',hours : day},
-      {name : 'sunday',hours: day}
-
+      {name : 'sunday',hours : day}
 
     ]
+    $scope.days.forEach(function(item)
+    {
+      var day = [];
+      for(var i = 0; i < 24; i++)
+      {
+        day[i] = {index: i, temperature: 20}
+      }
+        item.hours = day;
+      });
+
+    //$scope.watch('days');
   });

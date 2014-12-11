@@ -18,7 +18,7 @@ angular.module('easyHeatApp')
           .attr("height", 200)
           .attr("width", '100%');
 
-        var width = element[0].clientWidth;
+        var width = element[0].clientWidth - 50;
 
 
         var data = scope.days[1].hours;
@@ -26,7 +26,7 @@ angular.module('easyHeatApp')
 
 
         var scaleX = d3.scale.linear().range([0, width]).domain([0,23]);
-        var scaleY = d3.scale.linear().range([0, 200]).domain([15,27]);
+        var scaleY = d3.scale.linear().range([200, 0 ]).domain([15,27]);
 
      //   var render = function () {
 
@@ -59,8 +59,23 @@ angular.module('easyHeatApp')
             .attr("r", 2)
             .attr("class", "circle")
 
+        var xAxis = d3.svg.axis().scale(scaleX)
+          .orient("bottom").ticks(20);
+
+        var yAxis = d3.svg.axis().scale(scaleY)
+          .orient("right").ticks(5);
   //        dotsData.exit().remove();
-       // }
+
+        container.append("g")
+          .attr("class", "y axis")
+          .call(yAxis);
+
+        container.append("g")
+          .attr("class", "x axis")
+          .call(xAxis);
+
+
+        // }
 
     //    render();
 
@@ -86,11 +101,7 @@ angular.module('easyHeatApp')
             .attr("cy",(function(d) { return scaleY(d.temperature); }))
 
         });
-        //var xAxis = d3.svg.axis().scale(x)
-        //  .orient("bottom").ticks(5);
-        //
-        //var yAxis = d3.svg.axis().scale(y)
-        //  .orient("left").ticks(5);
+
 
       }
     };
