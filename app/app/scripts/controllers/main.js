@@ -7,36 +7,35 @@
  * # MainCtrl
  * Controller of the easyHeatApp
  */
+
+
+
 angular.module('easyHeatApp')
   .controller('MainCtrl', function ($scope, $http) {
     $scope.bounds = [15, 27];
+    $scope.house = 'lollandsgade9';
+    $scope.room = 'living';
     var day = [];
 
 
 
-    $http.get('http://localhost:3000/temperatures/friday')
+    $http.get('http://localhost:3000/temperatures/' + $scope.house + '/' + $scope.room)
       .then(function (data)
       {
 
         console.log(data.data);
-      //  $scope.days[1].hours = data.data.hours;
 
-        $scope.days = [
-          {name : 'weekday', hours : data.data.hours},
-          {name : 'friday', hours : data.data.hours},
-          {name : 'saturday',hours : data.data.hours},
-          {name : 'sunday',hours : data.data.hours}
 
-        ]
+        $scope.days = data.data.days;
+
       }, function()
-      {
-        $scope.days = [
+      {  $scope.days = [
           {name : 'weekday', hours : day},
           {name : 'friday', hours : day},
           {name : 'saturday',hours : day},
           {name : 'sunday',hours : day}
 
-        ]
+        ];
 
         $scope.days.forEach(function(item)
         {
@@ -48,14 +47,16 @@ angular.module('easyHeatApp')
           item.hours = day;
         });
         console.log("Creating new")
-        $http.post('http://localhost:3000/temperatures/', $scope.days[1]);
+        var data = { house: $scope.house, room: $scope.room , days : $scope.days};
+        $http.post('http://localhost:3000/temperatures', data);
       });
 
 
 
     $scope.update = function () {
-        console.log("ddd")
-        $http.put('http://localhost:3000/temperatures/friday',$scope.days[1])
+
+        var data = { house: $scope.house, room: $scope.room , days : $scope.days};
+        $http.put('http://localhost:3000/temperatures', data )
           .then(function (res) {
             console.log(res)
           }, function (res) {

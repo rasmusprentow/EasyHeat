@@ -1,19 +1,9 @@
 <div >
 
-
-  <div class="col-md-12" days="days" data-temp-control></div>
-
+<div ng-repeat="day in days">
+  {{day.name}}
+  <div class="col-md-12" hours="day.hours" data-temp-control></div>
+</div>
 <button ng-click="update()">Save</button>
 
-  <div class="day col-md-12" ng-repeat="day in days">
-
-    <h2>{{day.name}}</h2>
-
-    <div class="hour col-md-12" ng-repeat="hour in day.hours">
-      <div class="col-md-1 time-view">{{hour.index}}</div>
-      <div class="col-md-10 slider-view">
-        <input type="range"  min="0" max="27" step="1"  ng-model="hour.temperature" /></div>
-      <div class="col-md-1 temperature-view">{{hour.temperature}}</div>
-    </div>
-  </div>
 </div>

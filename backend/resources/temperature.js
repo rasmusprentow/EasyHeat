@@ -11,7 +11,7 @@ exports.create = function(req, res) {
 		} else {
 			res.send(obj);
 		}
-	});	
+	});
 };
 
 // Get a Document by the _id
@@ -31,11 +31,34 @@ exports.get = function(req, res){
 	});
 };
 
+exports.getSpec = function(req, res){
+
+  var house = req.params.house;
+  var room = req.params.room;
+  var day = req.params.day;
+  var hour = req.params.hour;
+  var id = 2;
+  console.log(house + room + day + hour);
+	Temperature.findOne({house: house, room: room}, function(err, data) {
+		if (err) {
+			logger.error(err);
+			res.send(err);
+		} else {
+			if (data) {
+				res.send(data);
+			} else {
+				res.status(404).send("Temperature not found with id: " + id)
+			}
+		}
+	});
+};
+
 
 // Update a document
 exports.update = function(req, res) {
 	var id = req.params.id;
-	Temperature.update({name : id}, req.body, function(err) {
+
+	Temperature.update({house : req.body.house, room: req.body.room}, req.body, function(err) {
 		if (!err) {
 			logger.info("update success");
 			res.send(200);
@@ -68,7 +91,7 @@ exports.delete = function(req, res) {
 				res.status(404).send("Temperature not found with id: " + id)
 			}
 		}
-	});	
+	});
 };
 
 

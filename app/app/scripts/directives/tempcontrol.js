@@ -10,20 +10,23 @@ angular.module('easyHeatApp')
   .directive('tempControl', function () {
     return {
       //template: '<div></div>',
-      scope: {"days":'='},
+      scope: {"hours":'='},
       restrict: 'A',
       link: function postLink(scope, element, attrs) {
         //The data for our line
 
-        scope.$watch('days', function() {
+        scope.$watch('hours', function() {
           var container = d3.select(element[0]).append('svg')
             .attr("height", 200)
             .attr("width", '100%');
 
           var width = element[0].clientWidth - 50;
 
-
-          var data = scope.days[1].hours;
+          if(!angular.isDefined(scope.hours))
+          {
+            return;
+          }
+          var data = scope.hours;
 
 
           var scaleX = d3.scale.linear().range([0, width]).domain([0, 23]);
