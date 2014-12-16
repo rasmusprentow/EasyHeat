@@ -34,7 +34,7 @@ module.exports = exports = function(app) {
 
 	app.post('/temperatures', temperature.create);		// Create
 	app.get('/temperatures/:id', temperature.get);		// Read
-  app.get('/temperatures/:house/:room/:day/:hour', temperature.getSpec);		// Read
+  app.get('/temperatures/:house/:room/:day', temperature.getSpec);		// Read
   app.get('/temperatures/:house/:room', temperature.getSpec);		// Read
 	app.put('/temperatures', temperature.update);		// Update
 	app.del('/temperatures/:id', temperature.delete);		// Delete

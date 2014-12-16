@@ -37,9 +37,15 @@ exports.getSpec = function(req, res){
   var room = req.params.room;
   var day = req.params.day;
   var hour = req.params.hour;
-  var id = 2;
+
   console.log(house + room + day + hour);
-	Temperature.findOne({house: house, room: room}, function(err, data) {
+  var selector = {house: house, room: room};
+  var projection = null;
+  if(day)
+  {
+    projection =  { days : { $elemMatch: { name : day}}};
+  }
+	Temperature.findOne(selector,projection, function(err, data) {
 		if (err) {
 			logger.error(err);
 			res.send(err);
